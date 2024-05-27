@@ -52,23 +52,23 @@ const allClearButton = document.querySelectorAll('[data-all-clear]')
 const previousOperandTextElement = document.querySelectorAll('[data-previous-Operand]')
 const currentOperandTextElement = document.querySelectorAll('[data-current-Operand]')
 
-const Calculator = new Calculator(previousOperandTextElement,currentOperandTextElement)
+const calculator = new Calculator(previousOperandTextElement,currentOperandTextElement)
 
 numberButtons.forEach(button=>{
     button.addEventListener('click',()=>{
-        Calculator.appendNumber(button.innerText)
-        Calculator.updateDisplay()
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
     })
 })
 
 operationButtons.forEach(button=>{
     button.addEventListener('click',()=>{
-        Calculator.chooseOperation(button.innerText)
-        Calculator.updateDisplay()
+        calculator.chooseOperation(button.innerText)
+        calculator.updateDisplay()
     })
 })
 
 equalsButton.addEventListener('click', button =>{
-    Calculator.compute()
-    Calculator.updateDisplay()
+    calculator.compute()
+    calculator.updateDisplay()
 })
